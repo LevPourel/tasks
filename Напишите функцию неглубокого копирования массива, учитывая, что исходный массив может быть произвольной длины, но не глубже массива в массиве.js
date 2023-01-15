@@ -1,9 +1,10 @@
 'use strict';
-let arr1 = [[1,2], [3,4]];
-let arr2 = aCopy(arr1);
 function aCopy(massive) {
     return massive.slice();
 }
+let arr1 = [[1,2], [3,4]];
+let arr2 = aCopy(arr1);
+
 arr1.push([5,6]);
 
 console.log(arr1); // [[1,2], [3,4], [5,6]]
