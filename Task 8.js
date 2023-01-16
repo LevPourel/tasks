@@ -2,7 +2,7 @@
 // Если номера ячеек не заданы, то по умолчанию это начало и конец всего массива
 function replaceIn(array , item , firstIndex = 0, lastIndex = array.length) {
     let newArr = array.slice();
-    let itemsDone = newArr.forEach(function (elem , index) {
+    newArr.forEach(function (elem , index) {
         if((index >= firstIndex) && (index != lastIndex)){
             newArr.splice(index , 1 , item)
         }
