@@ -3,10 +3,10 @@
 function nfa(array , index) {
     let newArr = array.slice();
     if(index >=0) {
-    console.log(newArr[index]);
+    return newArr[index];
     }
     else {
-        console.log(newArr[-index]);
+        return newArr[-index];
     }
     return newArr
 }
