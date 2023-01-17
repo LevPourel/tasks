@@ -2,7 +2,6 @@
 
 const arr = ['a','b','c'];
 function implode(array , separator){
-    let newArr = array.join(separator)
-    return newArr;
+    return array.join(separator);
 }
 console.log(implode(arr, '-')); // 'a-b-c'
