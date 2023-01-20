@@ -11,13 +11,12 @@ function fn(arr) {
     }, {})
     target = Object.entries(counter)
     target.sort();
-    let a = target.reduce( function (acc, item, index, arr) {
-        let maxNum = item[1];
+    const a = target.reduce( function (acc, item, index, arr) {
+        let maxNum = item;
         c.push(maxNum)
         index = Math.max.apply(null, c)
-        console.log(target.indexOf(index))
         return acc
     },target)
-    return a
+    return c
 }
 console.log(fn(arr)); // 'z'

@@ -1,0 +1,14 @@
+body{
+    margin:0 0;
+}
+header {
+    background: url("background.svg");
+    height: 100%;
+}
+.menu{
+    display: flex;
+    flex-direction: row;
+}
+html{
+    height: 100%;
+}
