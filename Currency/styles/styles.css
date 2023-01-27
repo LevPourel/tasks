@@ -1,0 +1,82 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(./fonts/Abel-Regular.ttf);
+}
+
+body{
+    margin:0 0;
+    height: 100%;
+}
+header {
+    background: url(../img/background.jpg) no-repeat;
+    height: 100%;
+    background-size: cover;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.menu{
+    display: flex;
+    flex-direction: row;
+    height: 40%;
+    width: 100%;
+    align-self: center;
+    justify-content: space-evenly;
+}
+html{
+    height: 100%;
+}
+.menuItem {
+    width: 30%;
+    background-color: white;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: inherit;
+}
+.tech {
+    height: 20%;
+    width: 100%;
+    text-align: center;
+}
+.tech h1{
+    color:white;
+    font-family: myFirstFont;
+    font-size: 100px;
+}
+.curImg {
+    width: 90px;
+    padding-left: 20px;
+    padding-top: 30px;
+}
+.Item {
+    display: flex;
+}
+.curr{
+    width:60%;
+    border: none;
+    font-size: 100px;
+    font-family: system-ui;
+}
+.curr::placeholder {
+    display: none;
+}
+.curr:focus{
+    outline: none;
+}
+.curr:hover{
+    border:none;
+}
+
+.curName{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    font-family: myFirstFont;
+    font-weight: bolder;
+    padding-right: 20px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
