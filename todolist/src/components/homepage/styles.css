@@ -1,0 +1,42 @@
+@font-face {
+    font-family: "Roboto";
+    src: url("fonts/Roboto-Regular.ttf");
+}
+
+.body {
+    height: 100vh;
+}
+.Main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    background-size: cover;
+}
+h1 {
+    font-size: 150px;
+    color: white;
+}
+.content {
+    align-self: center;
+    border-radius: 25px;
+    font-family: Roboto;
+}
+.menu {
+    width: 360px;
+    align-self: center;
+    border: solid white;
+    height: 90px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: inherit;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+.buttons p{
+    color: white;
+    font-family: Roboto;
+    font-size: 25px;
+}
+
