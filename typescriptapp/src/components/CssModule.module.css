@@ -1,0 +1,15 @@
+.Item {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to left bottom,white 10%, wheat);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.Weather {
+    height: 260px;
+    width: 400px;
+    background: white;
+    border-radius: 25px;
+}

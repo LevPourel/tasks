@@ -1,7 +1,0 @@
-{
-  "name": "BOT1.0",
-  "version": "1.0.0",
-  "dependencies": {
-    "telegraf": "^4.11.2"
-  }
-}
