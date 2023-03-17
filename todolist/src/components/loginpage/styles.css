@@ -13,7 +13,7 @@
 }
 .loginMenu {
     align-self: center;
-    width: 240px;
+    width: 270px;
     height: 300px;
     border-radius: 25px;
     border: solid white;
@@ -36,8 +36,9 @@
     outline: none;
     color: white;
     font-weight: bolder;
-    font-size: 15px;
+    font-size: 17px;
     text-align: center;
+    align-self: center;
 }
 .inputForm::placeholder {
     color: white;
@@ -63,6 +64,7 @@
     color: white;
     font-family: Roboto;
     cursor: pointer;
+    align-self: center;
 }
 .button:hover{
     border: solid yellow;
@@ -84,4 +86,8 @@
 .link:hover{
     color: yellow;
     font-size: 30px;
+}
+
+#error {
+    font-size: 15px;
 }

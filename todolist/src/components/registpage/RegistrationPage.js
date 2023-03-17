@@ -1,53 +1,130 @@
-import React, {useState} from "react";
+import React, { useState } from 'react'
 import './styles.css'
-import {useForm} from "react-hook-form";
+import { useForm } from 'react-hook-form'
 
 function RegistrationPage() {
-    const [result, setResult] = useState('');
-    function createNewProfile(){
-        const userName = document.getElementById('username')
-        const email = document.getElementById('email')
-        const password = document.getElementById('password')
-        const pswrdConf = document.getElementById('pswrdConf')
-        checkData(userName.value, email.value , password.value, pswrdConf.value);
-        function checkData(userName , email , password , pswrdConf){
-            const dataArr = []
-            dataArr.push(userName , email , password , pswrdConf)
-            for(let i = 0; i<=3; i++){
-                if(!dataArr[i]){
-                    setResult('Данные пусты')
-                    return;
-                }
+   const [result, setResult] = useState('')
+   const {
+      register,
+      formState: { errors },
+      handleSubmit,
+   } = useForm({ mode: 'onBlur' })
+   const onsubmit = (data) => {
+      console.log(data)
+   }
 
-            }
-            if(email.indexOf('@')<0){
-                setResult('Не верно указана почта')
-                return;
-            }
-            else if(password !== pswrdConf){
-                setResult('Пароли не совпадают')
-                return
-            }
-            else {setResult('Регистрация успешна')
-            }
-            return;
-        }
-    }
-    return (
-        <div className='body'>
-            <div className='itemMenu'>
-                <h1 className='itemHeader'>Registration</h1>
-                <div className='regMenu'>
-                    <input name='userName' placeholder='Enter your login' className='regInp' id='username'></input>
-                    <input name='email' placeholder='Enter your email ' className='regInp' id='email'></input>
-                    <input name='password' placeholder='Enter your password ' type='password' className='regInp' id='password'></input>
-                    <input name='email' placeholder='Confirm your password ' type='password' className='regInp' id='pswrdConf'></input>
-                    <button className='regButt' onClick={createNewProfile}>OK</button>
-                    <div><p className='resultPar'>{result}</p></div>
-                </div>
+   return (
+      <div className="body">
+         <div className="itemMenu">
+            <h1 className="itemHeader">Registration</h1>
+            <div className="regMenu">
+               <form
+                  onSubmit={handleSubmit(onsubmit)}
+                  style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly' }}
+               >
+                  <input
+                     className="inputForm"
+                     placeholder="Log in"
+                     {...register('username', {
+                        required: 'Field empty',
+                        minLength: {
+                           value: 5,
+                           message: 'Too short',
+                        },
+                     })}
+                  />
+                  <div
+                     style={{
+                        height: 40,
+                        color: 'red',
+                        textAlign: 'center',
+                        fontFamily: 'Roboto',
+                        fontWeight: 'bolder',
+                     }}
+                  >
+                     {errors?.username && <p>{errors?.username?.message || 'Error!'}</p>}
+                  </div>
+                  <input
+                     className="inputForm"
+                     placeholder="E-mail"
+                     {...register('email', {
+                        required: 'Field empty',
+                        minLength: {
+                           value: 5,
+                           message: 'Too short',
+                        },
+                        pattern: {
+                           value: /[a-z0-9]+@[a-z]+.[a-z]{2,3}/i,
+                           message: 'Is not E-Mail',
+                        },
+                     })}
+                  />
+                  <div
+                     style={{
+                        height: 40,
+                        color: 'red',
+                        textAlign: 'center',
+                        fontFamily: 'Roboto',
+                        fontWeight: 'bolder',
+                     }}
+                  >
+                     {errors?.email && <p>{errors?.email?.message || 'Error!'}</p>}
+                  </div>
+                  <input
+                     className="inputForm"
+                     placeholder="Password"
+                     {...register('password', {
+                        required: 'Field empty',
+                        minLength: {
+                           value: 8,
+                           message: 'Password must have more than 8 symbols',
+                        },
+                     })}
+                  />
+                  <div
+                     style={{
+                        height: 40,
+                        color: 'red',
+                        textAlign: 'center',
+                        fontFamily: 'Roboto',
+                        fontWeight: 'bolder',
+                     }}
+                  >
+                     {errors?.password && <p>{errors?.password?.message || 'Error!'}</p>}
+                  </div>
+                  <input
+                     className="inputForm"
+                     placeholder="Confirm password"
+                     {...register('confirm', {
+                        required: 'Field empty',
+                        minLength: {
+                           value: 8,
+                           message: 'Password must have more than 8 symbols',
+                        },
+                     })}
+                  />
+                  <div
+                     style={{
+                        height: 40,
+                        color: 'red',
+                        textAlign: 'center',
+                        fontFamily: 'Roboto',
+                        fontWeight: 'bolder',
+                     }}
+                  >
+                     {errors?.confirm && <p>{errors?.confirm?.message || 'Error!'}</p>}
+                  </div>
+                  <button type="submit" className="button">
+                     OK
+                  </button>
+               </form>
+               <div>
+                  <p className="resultPar">{result}</p>
+               </div>
             </div>
-        </div>)
-
+         </div>
+      </div>
+   )
 }
 
 export default RegistrationPage
